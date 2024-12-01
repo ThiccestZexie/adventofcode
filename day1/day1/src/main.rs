@@ -52,10 +52,14 @@ fn main() -> io::Result<()> {
     // check similarity
     let mut total = 0;
     for i in 0..left_numbers.len() {
+        let mut sim = 0;
         for j in 0..right_numbers.len() {
-
+            if left_numbers[i] == right_numbers[j] {
+                sim += 1;
+            }
 
         }
+        total += (left_numbers[i] * sim);
     }
     println!("{}", total);
     Ok(())
